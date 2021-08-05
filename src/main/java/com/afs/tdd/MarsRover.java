@@ -39,6 +39,18 @@ public class MarsRover {
                 newDirection = "W";
             }
         }
+        else if ("S".equals(roverStatus.getDirection()))
+        {
+            if ("N".equals(direction)) {
+                newDirection = "E";
+            } else if ("E".equals(direction)) {
+                newDirection = "S";
+            } else if ("W".equals(direction)) {
+                newDirection = "N";
+            } else if ("S".equals(direction)) {
+                newDirection = "W";
+            }
+        }
 
         roverStatus = new RoverStatus(locationX,locationY, newDirection);
     }
@@ -62,8 +74,13 @@ public class MarsRover {
         }
         else if ("S".equals(roverStatus.getDirection()))
         {
-            if("S".equals(direction))
-            {
+            if ("N".equals(direction)) {
+                newDirection = "W";
+            } else if ("E".equals(direction)) {
+                newDirection = "N";
+            } else if ("W".equals(direction)) {
+                newDirection = "S";
+            } else if ("S".equals(direction)) {
                 newDirection = "E";
             }
         }
