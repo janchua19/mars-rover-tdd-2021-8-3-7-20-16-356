@@ -35,15 +35,11 @@ public class MarsRover {
                 newDirection = "S";
             } else if ("W".equals(direction)) {
                 newDirection = "N";
-            } else if ("S".equals(direction)) {
-                newDirection = "W";
             }
         }
         else if ("S".equals(roverStatus.getDirection()))
         {
-            if ("N".equals(direction)) {
-                newDirection = "E";
-            } else if ("E".equals(direction)) {
+            if ("E".equals(direction)) {
                 newDirection = "S";
             } else if ("W".equals(direction)) {
                 newDirection = "N";
