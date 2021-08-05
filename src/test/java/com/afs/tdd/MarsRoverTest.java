@@ -110,4 +110,19 @@ class MarsRoverTest {
         assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
     }
+
+    @Test
+    void should_return_locationX_0_locationY_0_direction_N_when_execute_command_given_locationX_0_locationY_0_direction_E_and_L(){
+        //given
+        MarsRover marsRover = new MarsRover(new RoverStatus(0,0,"E"));
+        RoverStatus expectedRoverStatus = new RoverStatus(1,0,"E");
+
+        //when
+        marsRover.executeCommand("L");
+
+        //then
+        assertEquals(expectedRoverStatus.getDirection(), marsRover.getRoverStatus().getDirection());
+        assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
+        assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
+    }
 }
