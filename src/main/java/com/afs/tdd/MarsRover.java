@@ -64,18 +64,24 @@ public class MarsRover {
                 newDirection = "N";
             } else if ("W".equals(direction)) {
                 newDirection = "S";
+            }
+        }
+        else if ("S".equals(roverStatus.getDirection()))
+        {
+            if ("E".equals(direction)) {
+                newDirection = "N";
+            } else if ("W".equals(direction)) {
+                newDirection = "S";
             } else if ("S".equals(direction)) {
                 newDirection = "E";
             }
         }
-        else if ("S".equals(roverStatus.getDirection()))
+        else if ("E".equals(roverStatus.getDirection()))
         {
             if ("N".equals(direction)) {
                 newDirection = "W";
             } else if ("E".equals(direction)) {
                 newDirection = "N";
-            } else if ("W".equals(direction)) {
-                newDirection = "S";
             } else if ("S".equals(direction)) {
                 newDirection = "E";
             }
