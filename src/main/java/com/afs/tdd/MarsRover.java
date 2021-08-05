@@ -28,17 +28,16 @@ public class MarsRover {
         final String direction = roverStatus.getDirection();
         String newDirection = direction;
 
-        if("N".equals(direction)){
-            newDirection = "E";
-        }
-        else if("E".equals(direction)){
-            newDirection = "S";
-        }
-        else if("W".equals(direction)){
-            newDirection = "N";
-        }
-        else if("S".equals(direction)){
-            newDirection = "W";
+        if("N".equals(roverStatus.getDirection())) {
+            if ("N".equals(direction)) {
+                newDirection = "E";
+            } else if ("E".equals(direction)) {
+                newDirection = "S";
+            } else if ("W".equals(direction)) {
+                newDirection = "N";
+            } else if ("S".equals(direction)) {
+                newDirection = "W";
+            }
         }
 
         roverStatus = new RoverStatus(locationX,locationY, newDirection);
