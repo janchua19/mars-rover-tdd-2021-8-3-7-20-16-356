@@ -19,6 +19,7 @@ public class MarsRover {
         {
             turnRight();
         }
+
     }
 
     private void turnRight() {
@@ -70,7 +71,12 @@ public class MarsRover {
         final int locationX = roverStatus.getLocationX();
         final int locationY = roverStatus.getLocationY();
         final String direction = roverStatus.getDirection();
-        roverStatus = new RoverStatus(locationX,locationY + 1, direction);
+        if("N".equals(roverStatus.getDirection())) {
+            roverStatus = new RoverStatus(locationX, locationY + 1, direction);
+        }
+        else if("S".equals(roverStatus.getDirection())) {
+            roverStatus = new RoverStatus(locationX, locationY -1, direction);
+        }
     }
 
     public RoverStatus getRoverStatus() {
