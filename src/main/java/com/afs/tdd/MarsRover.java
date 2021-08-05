@@ -48,6 +48,8 @@ public class MarsRover {
             }
         }
 
+
+
         roverStatus = new RoverStatus(locationX,locationY, newDirection);
     }
 
