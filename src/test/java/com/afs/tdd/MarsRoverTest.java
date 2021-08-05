@@ -70,7 +70,7 @@ class MarsRoverTest {
     void should_return_locationX_0_locationY_0_direction_E_when_execute_command_given_locationX_0_locationY_0_direction_S_and_L(){
         //given
         MarsRover marsRover = new MarsRover(new RoverStatus(0,0,"S"));
-        RoverStatus expectedRoverStatus = new RoverStatus(0,-1,"S");
+        RoverStatus expectedRoverStatus = new RoverStatus(0,0,"E");
 
         //when
         marsRover.executeCommand("L");
