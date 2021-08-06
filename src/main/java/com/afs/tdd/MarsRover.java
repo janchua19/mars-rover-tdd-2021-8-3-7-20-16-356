@@ -8,23 +8,21 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if(command.length() == 1) {
-            if ("M".equals(command)) {
-                move();
-            } else if ("L".equals(command)) {
-                turnLeft();
-            } else if ("R".equals(command)) {
-                turnRight();
-            }
-        }
-        else
-        {
-            for (char charCommand : command.toCharArray())
-            {
-                executeCommand(String.valueOf(charCommand));
-            }
+        if ("M".equals(command)) {
+            move();
+        } else if ("L".equals(command)) {
+            turnLeft();
+        } else if ("R".equals(command)) {
+            turnRight();
         }
 
+
+    }
+    public void executeCommands(String commands){
+        for (char charCommand : commands.toCharArray())
+        {
+            executeCommand(String.valueOf(charCommand));
+        }
     }
 
     private void turnRight() {
@@ -33,46 +31,17 @@ public class MarsRover {
         final String direction = roverStatus.getDirection();
         String newDirection = direction;
 
-        if("N".equals(roverStatus.getDirection())) {
-            if ("N".equals(direction)) {
-                newDirection = "E";
-            } else if ("E".equals(direction)) {
-                newDirection = "S";
-            } else if ("W".equals(direction)) {
-                newDirection = "N";
-            }
-        }
-        else if ("S".equals(roverStatus.getDirection()))
-        {
-            if ("E".equals(direction)) {
-                newDirection = "S";
-            } else if ("W".equals(direction)) {
-                newDirection = "N";
-            } else if ("S".equals(direction)) {
-                newDirection = "W";
-            }
-        }
-        else if ("E".equals(roverStatus.getDirection()))
-        {
-            if ("E".equals(direction)) {
-                newDirection = "S";
-            } else if ("N".equals(direction)) {
-                newDirection = "E";
-            } else if ("S".equals(direction)) {
-                newDirection = "W";
-            }
-        }
-        else if ("W".equals(roverStatus.getDirection()))
-        {
-            if ("W".equals(direction)) {
-                newDirection = "N";
-            } else if ("N".equals(direction)) {
-                newDirection = "E";
-            } else if ("S".equals(direction)) {
-                newDirection = "W";
-            }
-        }
 
+            if ("E".equals(direction)) {
+                newDirection = "S";
+            } else if ("N".equals(direction)) {
+                newDirection = "E";
+            } else if ("S".equals(direction)) {
+                newDirection = "W";
+            }
+            else if ("W".equals(direction)) {
+                newDirection = "N";
+            }
 
         roverStatus = new RoverStatus(locationX,locationY, newDirection);
     }
@@ -83,48 +52,17 @@ public class MarsRover {
         final String direction = roverStatus.getDirection();
         String newDirection = direction;
 
-        if("N".equals(roverStatus.getDirection())) {
-            if ("N".equals(direction)) {
-                newDirection = "W";
-            } else if ("E".equals(direction)) {
-                newDirection = "N";
-            } else if ("W".equals(direction)) {
-                newDirection = "S";
-            }
-        }
-        else if ("S".equals(roverStatus.getDirection()))
-        {
-            if ("E".equals(direction)) {
-                newDirection = "N";
-            } else if ("W".equals(direction)) {
-                newDirection = "S";
-            } else if ("S".equals(direction)) {
-                newDirection = "E";
-            }
-        }
-        else if ("E".equals(roverStatus.getDirection()))
-        {
-            if ("N".equals(direction)) {
-                newDirection = "W";
-            } else if ("E".equals(direction)) {
-                newDirection = "N";
-            } else if ("S".equals(direction)) {
-                newDirection = "E";
-            }
-        }
-        else if ("W".equals(roverStatus.getDirection()))
-        {
-            if ("N".equals(direction)) {
-                newDirection = "W";
-            } else if ("W".equals(direction)) {
-                newDirection = "S";
-            } else if ("S".equals(direction)) {
-                newDirection = "E";
-            }
+        if ("N".equals(direction)) {
+            newDirection = "W";
+        } else if ("E".equals(direction)) {
+            newDirection = "N";
+        } else if ("W".equals(direction)) {
+            newDirection = "S";
+        } else if ("S".equals(direction)) {
+            newDirection = "E";
         }
 
         roverStatus = new RoverStatus(locationX,locationY, newDirection);
-
     }
 
     private void move() {
